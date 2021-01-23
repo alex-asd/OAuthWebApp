@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-11">
+                <p>Logged in as : <a href="@Model.GitHubUrl">@Model.GitHubLogin</a></p>
+            </div>
+            <div class="col-md-1">
+                <a asp-action="Logout" asp-controller="Auth" class="btn btn-outline-primary">Logout</a>
+            </div>
+        </div>
+        <br />
+        <p>Check your danish car</p>
+        <form method="post">
+            <input name="numberplate" class="input-group-sm" placeholder="ZU47209" />
+            <input type="submit" class="btn btn-dark" value="Search" />
+        </form>
+
+        <p>@ViewData["vehicleDescription"]</p>
+        <p class="text-danger font-weight-bolder">@ViewData["error"]</p>
+    </div>
+</div>
