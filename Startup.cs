@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace OathWebApp
+namespace OAuthWebApp
 {
     public class Startup
     {
@@ -48,7 +48,7 @@ namespace OathWebApp
                 //  In this case the data is stored in appsettings.json and will not be visable
                 options.ClientId = Configuration["Github:ClientId"];
                 options.ClientSecret = Configuration["Github:ClientSecret"];
-                options.CallbackPath = new PathString("/signin-oath");
+                options.CallbackPath = new PathString("/signin-oauth");
 
                 //  Setting up the endpoints as shown in the API documentation
                 options.AuthorizationEndpoint = "https://github.com/login/oauth/authorize";

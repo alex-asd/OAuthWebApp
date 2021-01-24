@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
-namespace OathWebApp.Controllers
+namespace OAuthWebApp.Controllers
 {
     [Route("[controller]/[action]")]
     public class AuthController : Controller

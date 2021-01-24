@@ -10,7 +10,7 @@ using Octokit;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 
-namespace OathWebApp.Pages
+namespace OAuthWebApp.Pages
 {
     [Authorize]
     public class IndexModel : PageModel
@@ -28,7 +28,7 @@ namespace OathWebApp.Pages
         {
             if (User.Identity.IsAuthenticated)
             {
-                var github = new GitHubClient(new ProductHeaderValue("OathWebApp"));
+                var github = new GitHubClient(new ProductHeaderValue("OAuthWebApp"));
                 string accessToken = await HttpContext.GetTokenAsync("access_token");
 
                 if (accessToken != null)
