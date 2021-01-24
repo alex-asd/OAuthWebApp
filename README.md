@@ -6,7 +6,7 @@
 * [Conclusion](#conclusion)
 
 ## General info
-This project is simple .NET Core web application created simply to show basic level of proficiency with OAuth 2.0 and Web Services.
+This project is a .NET Core web application created simply to show basic level of proficiency with OAuth 2.0 and Web Services.
 	
 ## Technologies
 Project is created with:
@@ -111,10 +111,14 @@ if (User.Identity.IsAuthenticated)
   }
 }
 ```
-Octokit is really powerful, for more information on it, check out this [link](https://github.com/octokit) and [Getting started](https://github.com/octokit/octokit.net/blob/main/docs/getting-started.md)
+Octokit is very powerful, for more information on it, check out this [link](https://github.com/octokit) and [Getting started](https://github.com/octokit/octokit.net/blob/main/docs/getting-started.md)
 
 ## Consuming the Web Service
 ### Setup
+**Connected services** allows you to create client-side code easily using direct .asmx URI or WSDL file. In this case, both are an option, but i will cover only what I used.
+
+The operations is very straightforward, right-click on **Connected services** -> in my case **WCF Web Service Reference Provider** -> paste the .asmx URI, select the service and give it a proper name. .NET will generate a client proxy class.
+
 ### Getting the result
 ```
 CarRegSoapClient client = new CarRegSoapClient(EndpointConfiguration.CarRegSoap);
@@ -125,6 +129,3 @@ var jsonObj = (dynamic)JObject.Parse(result.vehicleJson);
 //  The data can be handled in various ways, but just for demonstration I use ViewData to pass it to the view
 ViewData["vehicleDescription"] = $"{ jsonObj.Description } with { jsonObj.EngineSize.CurrentTextValue }cc { jsonObj.FuelType.CurrentTextValue } engine";
 ```
-
-## Conclusion
-
