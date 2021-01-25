@@ -3,7 +3,6 @@
 * [Technologies](#technologies)
 * [Connecting to GitHub API](#connecting-to-github-api)
 * [Consuming the Web Service](#consuming-the-web-service)
-* [Conclusion](#conclusion)
 
 ## General info
 This project is a .NET Core web application created simply to show basic level of proficiency with OAuth 2.0 and Web Services.
